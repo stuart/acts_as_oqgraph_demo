@@ -1,0 +1,44 @@
+%h1 Maze
+
+= link_to "Go to the Friends demo", oqgraph_users_path
+
+%p
+  %strong 
+    Maze Dimensions: 
+    =@cell.maze.width
+    by
+    =@cell.maze.height
+
+%p
+  %h2{:style => "color:red"}
+    = "YOU WIN!!!" if @cell == @cell.maze.cells.last
+    
+  %strong
+    Current Cell: 
+    [
+    = @cell.x
+    ,
+    = @cell.y
+    ]
+%p
+  This is not really much of a puzzle yet, just a demonstration of how fast
+  the OQGraph engine can find paths in graphs.
+%p
+  The path find does a find for the full maze. Rendering all the cells would make this 
+  REALLY SLOW. That's why you see only a neighbourhood of cells.
+%p
+  Javascript based fancy scrolling movement not yet enabled so just
+  click on a cell to move to it. I trust you won't cheat. :P
+%p
+  Solution from start to finish in light blue.
+  Solution path from current position is shown in pink.
+#solution
+  %h2 
+    Solution path
+  %p
+    = @cell.maze.solution.map{|c| "[#{c.x} #{c.y}]"}.join(' -> ')
+
+#maze
+  - @cell.visible.each do |cell|
+    = render :partial => cell, :locals => {:center_cell => @cell}
+

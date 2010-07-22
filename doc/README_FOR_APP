@@ -1,0 +1,6 @@
+This is a demo of the acts_as_oqgraph gem. 
+
+There are two demos, Friends (oqgraph_users) and Mazes.
+
+They demonstrate using acts_as_oqgraph for fast pathfinding and
+neighbour finding.

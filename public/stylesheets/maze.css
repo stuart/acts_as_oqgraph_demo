@@ -1,0 +1,49 @@
+body{
+    width: 80%;
+}
+div#maze{
+   position: relative;  
+}
+
+.cell{
+    position: absolute;
+    width: 54px;
+    height: 54px;
+    background: #ddd;
+    border: 3px solid #ddd;
+}
+
+.cell.north{
+    border-top: 3px solid #333;
+}
+
+.cell.south{
+    border-bottom: 3px solid #333;;
+}
+
+.cell.east{
+    border-right: 3px solid #333;
+}
+
+.cell.west{
+    border-left: 3px solid #333;
+}
+
+.cell.solution{
+    background: #eff;
+}
+
+.cell.inpath{
+    background: #fef;
+}
+
+.cell a{
+    width: 54px;
+    height: 54px;
+    display: block;
+}
+
+.cell.current{
+    background-image:url('/images/man.png');
+    background-repeat: no-repeat;
+}

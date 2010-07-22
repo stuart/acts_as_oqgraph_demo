@@ -1,0 +1,4 @@
+- x = (cell.x - center_cell.x) * 60 + 300
+- y = (cell.y - center_cell.y) * 60 + 300 
+.cell{:class => cell.css_classes(center_cell), :style => "left: #{x}px; top: #{y}px;"}
+  = link_to '', cell

@@ -1,0 +1,28 @@
+%h1 Mazes Demo
+%p 
+  This is demonstration of using acts_as_oqgraph to 
+  path find in a maze.
+%p
+  = link_to "Go to the Friends Demo", oqgraph_users_path
+%table
+  %thead
+    %tr
+      %td
+        ID
+      %td
+        Width
+      %td
+        Height
+      %td
+        Actions       
+  %tbody   
+    - @mazes.each do |maze|
+      %tr
+        %td
+          = maze.id
+        %td
+          = maze.width
+        %td
+          = maze.height
+        %td
+          = link_to "Show", maze

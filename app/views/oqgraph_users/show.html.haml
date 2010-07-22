@@ -1,0 +1,33 @@
+%h1 Friends Demo
+
+%p 
+  This is a demonstration of the use of the OQGraph engine for MySQL
+  in a Ruby on Rails application, using the acts_as_oqgraph gem.
+
+%p
+  = link_to "All Users", oqgraph_users_url
+
+%h2
+  ="#{@user.first_name} #{@user.last_name}"
+  
+%h2 
+  ="#{@user.friends.length} Friends"
+
+%ul
+  - @user.friends.each do |f|
+    %li
+      ="#{f.first_name} #{f.last_name}"
+      = link_to "Show", f  
+
+%h2 
+  ="#{@user.network.length} Friends of friends of ..."
+  and here's some of them
+  - selection = @user.network.sample(10)
+%ul
+  - selection.each do |f|
+    %li
+      ="#{f.first_name} #{f.last_name}"
+      = link_to "Show", f 
+      \|
+      = link_to "Show path to", path_between_users_path(:id => @user.id,:other_id => f.id)                           
+                                                     

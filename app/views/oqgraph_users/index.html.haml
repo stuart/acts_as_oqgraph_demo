@@ -1,0 +1,21 @@
+%h1 Friends Demo
+
+%p 
+  This is demonstration of using acts_as_oqgraph to 
+  find links between lots of users.
+%p
+= link_to "Go to the maze demo", mazes_path
+
+- sampled = @users.sample(100)
+
+%h2 
+  Here's a random sample of 
+  = sampled.length
+  Users out of a total of
+  = @users.length
+  
+%ul
+  - sampled.each do |user|
+    %li
+      ="#{user.first_name} #{user.last_name}"
+      =link_to "Show", user

@@ -1,0 +1,19 @@
+# This MUST use MYSQL with the OQGRAPH engine installed.
+
+development:
+  adapter: mysql
+  database: oqgraph_dev
+  user: 
+  password: 
+
+test:
+    adapter: mysql
+    database: oqgraph_test
+    user: 
+    password: 
+
+production:
+    adapter: mysql
+    database: oqgraph_prod
+    user: 
+    password: 
