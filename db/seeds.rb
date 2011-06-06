@@ -2,8 +2,8 @@
 OqgraphUser.destroy_all
 OqgraphUserEdge.destroy_all
 
-puts "Creating 1000 random users."
-1000.times do
+puts "Creating 10000 random users."
+10000.times do
   OqgraphUser.create(:first_name => Faker::Name.first_name,:last_name => Faker::Name.last_name)
 end
 

@@ -25,7 +25,7 @@ You will need to setup a MySQL database with the OQGraph Engine plugin.
 == Setup
 
 Setup the database config and edit it to your needs:
-  cp config/database.example config/database
+  cp config/database.yml.example config/database.yml
 
 Edit the seed data and then create the databases.
 Note that db:seed can take a LONG time (LONG means really LONG to you A.D.D. whippersnappers...hours, days even) 
