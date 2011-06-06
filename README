@@ -6,6 +6,8 @@ There are two parts to the demo: Friends and Maze.
 
 The Friends demo simulates having a large set of interconnected users, that is Users can have friends.
 It uses the OQGraph engine to efficiently find connections between users.
+For info on the engine see:
+http://openquery.com/products/graph-engine
 
 The Maze simulation shows path finding in a maze using OQGraph.
 The code is mainly so you can take a look and check out how acts_as_oqgraph can be used.
@@ -14,13 +16,12 @@ Don't complain about the clunky graphics, I'm not a designer. If you don't like 
 send me a pull request!
 
 I'd be pleased to hear comments, criticisms and ideas.
-Don't complain to me about how I've mangled things or not done stuff the 'Ruby' way. 
-I'm an old C programmer at heart and in beard!
 
 == Requirements
 This is a Rails 2.3.8 app. I have used some Ruby 1.9 specific code though the acts_as_oqgraph gem does not.
   
-You will need to setup a MySQL database with the OQGraph Engine plugin.
+You will need to setup a MySQL database with the OQGraph Engine plugin. The easiest way to do this is use MariaDB 5.2 which comes
+with the OQGraph engine. 
 
 == Setup
 
@@ -44,7 +45,5 @@ Run and enjoy.
   
 Depending on how many edges you have it may take a bit of time to start up.
 The reason for this is that the OQGraph table is volatile and needs to be created on 
-startup. This is also the reason that I've set config.cache_classes = true in the development
-environment, otherwise the OQGraph would be updated on every request, UGH!.
-
+startup.
 
